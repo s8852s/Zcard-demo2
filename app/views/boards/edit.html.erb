@@ -1,0 +1,13 @@
+<h1>修改看板</h1>
+
+<%= link_to "返回列表", boards_path %>
+
+<%= form_for(@board) do |form| %>
+
+<div class="fields">
+    <%= form.label :title, "看板名稱" %>
+    <%= form.text_field :title %>
+</div>
+
+<%= form.submit %>
+<% end %>

@@ -1,0 +1,26 @@
+<h1>看板列表</h1>
+
+<%= link_to "新增看板", new_board_path %>
+
+
+<table>
+    <thead>
+        <tr>
+            <td>看板名稱</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @boards.each do |board| %>
+        <tr>
+            <td><%= board.title %></td>
+            <td>
+                <%= link_to "修改", edit_board_path(board) %>
+                <%= link_to "刪除", board_path(board), 
+                                    method: "delete", 
+                                    data: { confirm: "確定要刪除看板嗎?" }  %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
