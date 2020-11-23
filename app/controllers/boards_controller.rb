@@ -38,8 +38,8 @@ class BoardsController < ApplicationController
 		redirect_to root_path, notice: "刪除看板成功"
 	end
 
+	
 	private
-
 	def find_board
 		@board = Board.find_by(id: params[:id])
 	end
