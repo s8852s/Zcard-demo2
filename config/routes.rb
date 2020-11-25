@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "boards#index"
-  resources :boards
+  resources :boards do
+    resources :posts, shallow: true
+  end
 
   resource :users, controller: "registrations", only: [:create, :edit, :update] do
     get '/sign_up', action: "new"

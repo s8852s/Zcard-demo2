@@ -1,0 +1,11 @@
+<h1><%= @board.title %></h1>
+
+<%= link_to "返回看板列表", boards_path %>
+
+<%= link_to "發表文章", new_board_post_path(@board) %>
+
+<% @posts.each do |post| %>
+    <ul>
+        <li><%= link_to post.title, post_path(post) %></li>
+    </ul>
+    <% end %>

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 	# include SessionsHelper
+	before_action :session_required, only: [:create, :edit, :update]
   def new 
     @user = User.new
   end
